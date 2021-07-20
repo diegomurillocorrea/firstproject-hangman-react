@@ -1,0 +1,301 @@
+/* General Styles */
+
+@font-face {
+    font-family: AllerDisplay;
+    src: url("./fonts/AllerDisplay.ttf") format("truetype");
+}
+
+:root {
+    --white: #FFFFFF;
+    --bone: #f5f5f5;
+    --lightgray: #e6e6e7;
+    --darkgray: #53555d;
+    --lightblue: #4d71fa;
+    --darkpurple: #3b4263;
+    --lightpurple: #4d536b;
+    --yellow: #ffb900;
+    --lightyellow: #ffc524;
+    --darkyellow: #d59d02;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: AllerDisplay;
+}
+
+
+
+
+/* Main Containers */
+
+.main-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var( --bone );
+}
+
+.top-container {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 7%;
+}
+
+.bottom-container {
+    width: inherit;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.hangman-container {
+    width: 30em;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* Containers */
+
+.collected-words-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 50em;
+}
+
+.displayed-words-container {
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 30%;
+    z-index: 2;
+}
+
+.triangle-container {
+    width: inherit;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    top: -128%;
+    z-index: 1;
+}
+
+
+
+/* Styled Elements */
+
+.words {
+    font-size: 6em;
+    color: var( --lightblue );
+    text-transform: uppercase;
+    letter-spacing: 20px;
+    transition: 1s;
+}
+
+.displayed-words {
+    width: 90px;
+    height: 100px;
+    margin: 10px 13px;
+    border-radius: 10px;
+    border: none;
+    background-color: var( --lightgray );
+    filter: opacity(90%);
+    text-align: center;
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.triangle {
+    width: 30% !important;
+}
+
+.text-darkgray {
+    color: var( --darkgray );
+}
+
+.text-lightblue {
+    color: var( --lightblue );
+}
+
+.text-white {
+    color: var( --white );
+}
+
+.bg-darkgray {
+    background-color: var( --darkgray );
+    color: var( --white );
+}
+
+.no-display {
+    background-color: var( --bone );
+    color: var( --bone );
+}
+
+
+
+/* Screen Notifications */
+
+.screen {
+    background-color: rgba(59, 66, 99, 0.8);
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.screen-title {
+    color: var( --white );
+    font-size: 5em;
+    letter-spacing: 4px;
+    margin: 20px;
+}
+
+.screen-button {
+    padding: 0.9em 2.2em;
+    border-radius: 50px;
+    border: 3px dashed var( --yellow );
+    background-color: transparent;
+    color: var( --yellow );
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.screen-button:hover {
+    border: 3px dashed var( --lightyellow );
+    color: var( --lightyellow );
+    background-color: var( --lightpurple );
+}
+
+.screen-button:focus {
+    border: 3px dashed var( --darkyellow );
+    color: var( --darkyellow );
+    background-color: var( --darkpurple );
+}
+
+
+
+/* Hangman Images */
+
+/* bar */
+img:first-child {
+    width: 38%;
+    z-index: 12;
+}
+
+/* head */
+img:nth-child(2) {
+    width: 20%;
+    position: relative;
+    left: 115px;
+    z-index: 11;
+}
+
+/* neck */
+img:nth-child(3) {
+    width: 5%;
+    position: relative;
+    top: -20px;
+    left: 152px;
+    z-index: 10;
+}
+
+/* body */
+img:nth-child(4) {
+    width: 15%;
+    position: relative;
+    top: -25px;
+    left: 128px;
+    z-index: 10;
+}
+
+/* right arm */
+img:nth-child(5) {
+    width: 15%;
+    position: relative;
+    top: -137px;
+    left: 175px;
+    z-index: 10;
+}
+
+/* left arm */
+img:nth-child(6) {
+    width: 15%;
+    position: relative;
+    top: -205px;
+    left: 78px;
+    z-index: 10;
+}
+
+/* right hand */
+img:nth-child(7) {
+    width: 4%;
+    position: relative;
+    top: -225px;
+    left: 230px;
+    z-index: 9;
+}
+
+/* left hand */
+img:nth-child(8) {
+    width: 4%;
+    position: relative;
+    top: -241px;
+    left: 76px;
+    z-index: 9;
+}
+
+/* right leg */
+img:nth-child(9) {
+    width: 10%;
+    position: relative;
+    top: -225px;
+    left: 169px;
+    z-index: 8;
+}
+
+/* left leg */
+img:nth-child(10) {
+    width: 10%;
+    position: relative;
+    top: -330px;
+    left: 109px;
+    z-index: 8;
+}
+
+/* right foot */
+img:nth-child(11) {
+    width: 10%;
+    position: relative;
+    top: -349px;
+    left: 186px;
+    z-index: 8;
+}
+
+/* left foot */
+img:nth-child(12) {
+    width: 10%;
+    position: relative;
+    top: -370px;
+    left: 93px;
+    z-index: 8;
+}   
